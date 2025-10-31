@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить книгу</title>
+</head>
+<body>
+    <h2>Добавить новую книгу</h2>
+    <a th:href="@{/}" class="back-link">На главную</a>
+
+    <form th:action="@{/add}" th:object="${book}" method="post">
+        <div>
+            <label>Название:</label>
+            <input type="text" th:field="*{title}" />
+            <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error"></div>
+        </div>
+        <div>
+            <label>Автор:</label>
+            <input type="text" th:field="*{author}" />
+            <div th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="error"></div>
+        </div>
+        <div>
+            <label>Жанр:</label>
+            <input type="text" th:field="*{genre}" />
+            <div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}" class="error"></div>
+        </div>
+        <div>
+            <label>Год:</label>
+            <input type="number" th:field="*{year}" />
+            <div th:if="${#fields.hasErrors('year')}" th:errors="*{year}" class="error"></div>
+        </div>
+        <div>
+            <label>Цена:</label>
+            <input type="number" th:field="*{price}" />
+            <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></div>
+        </div>
+        <button type="submit">Сохранить книгу</button>
+    </form>
+</body>
+</html>

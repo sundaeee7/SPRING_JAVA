@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Книжный каталог</title>
+</head>
+<body>
+    <h1>Книжный каталог</h1>
+    <ul>
+        <li><a th:href="@{/books}">Просмотреть все книги</a></li>
+        <li><a th:href="@{/add}">Добавить новую книгу</a></li>
+        <li><a th:href="@{/search}">Найти книги дешевле заданной цены</a></li>
+    </ul>
+</body>
+</html>
