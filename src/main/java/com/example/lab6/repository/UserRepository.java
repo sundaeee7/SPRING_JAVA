@@ -1,0 +1,16 @@
+package com.example.lab6.repository;
+
+import com.example.lab6.model.User;
+import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+/** Репозиторий для работы с User (пользователей), предоставляет данные через JPA */
+public interface UserRepository extends JpaRepository<User, Long> {
+
+  @Query("SELECT u FROM User u LEFT JOIN FETCH u.roles WHERE u.username = :username")
+  Optional<User> findByUsernameWithRoles(@Param("username") String username);
+
+  Boolean existsByUsername(String username);
+}
