@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Книжный каталог</title>
+</head>
+
+<body>
+    <h1>Книжный каталог</h1>
+    <div sec:authorize="isAuthenticated()">
+        <div sec:authorize="hasRole('ADMIN')">
+            Здравствуй, <span sec:authentication="name"></span>, ты можешь удалять, добавлять и редактировать книги в
+            каталоге.
+        </div>
+
+        <div sec:authorize="hasRole('USER') and !hasRole('ADMIN')">
+            Здравствуй, <span sec:authentication="name"></span>, ты можешь ознакомиться с каталогом.
+        </div>
+        <a th:href="@{/logout}">Выйти из аккаунта</a>
+    </div>
+    <ul>
+        <li><a th:href="@{/books}">Просмотреть все книги</a></li>
+        <div sec:authorize="hasRole('ADMIN')">
+            <li><a th:href="@{/add}">Добавить новую книгу</a></li>
+        </div>
+        <li><a th:href="@{/search}">Найти книги дешевле заданной цены</a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+com\example\lab6\controller\AuthController.class
+com\example\lab6\lab6Application.class
+com\example\lab6\model\User.class
+com\example\lab6\model\Role.class
+com\example\lab6\config\SecurityConfig.class
+com\example\lab6\repository\UserRepository.class
+com\example\lab6\model\ERole.class
+com\example\lab6\BookRepository.class
+com\example\lab6\Book.class
+com\example\lab6\BookService.class
+com\example\lab6\service\AuthService.class
+com\example\lab6\repository\RoleRepository.class
+com\example\lab6\BookController.class

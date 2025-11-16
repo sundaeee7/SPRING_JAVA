@@ -1,0 +1,13 @@
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\Book.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\BookController.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\BookRepository.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\BookService.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\config\SecurityConfig.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\controller\AuthController.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\lab6Application.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\model\ERole.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\model\Role.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\model\User.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\repository\RoleRepository.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\repository\UserRepository.java
+C:\Homework\Java\lab6\src\main\java\com\example\lab6\service\AuthService.java

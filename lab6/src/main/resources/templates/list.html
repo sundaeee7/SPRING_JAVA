@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Все книги</title>
+</head>
+
+<body>
+    <h2>Все книги</h2>
+
+    <a th:href="@{/}" class="back-link">На главную</a>
+    <div sec:authorize="hasRole('ADMIN')">
+        <a th:href="@{/add}" style="float: right;">Добавить книгу</a>
+    </div>
+    <table th:if="${books != null and !books.isEmpty()}">
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Жанр</th>
+            <th>Год</th>
+            <th>Цена</th>
+            <th>Действия</th>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.genre}"></td>
+            <td th:text="${book.year}"></td>
+            <td th:text="${book.price}"></td>
+            <td>
+                <div sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{/edit/{id}(id=${book.id})}">Изменить</a> |
+                    <a th:href="@{/delete/{id}(id=${book.id})}"
+                        onclick="return confirm('Удалить эту книгу?')">Удалить</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
